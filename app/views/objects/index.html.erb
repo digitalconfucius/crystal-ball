@@ -1,4 +1,18 @@
 <h1>Crystal Ball</h1>
-<p>Find me in app/views/objects/index.html.erb</p>
+<p>Ask me about something that you want to know.</p>
 
-<a href="https://twitter.com/digiconfucius">@DigitalConfucius</a>
+<div>
+
+<%= form_tag(submit_form_path, method: :post) do %>
+    <%= label_tag(:data, "Enter some data:") %>
+    <%= text_field_tag(:data) %>
+    <%= submit_tag("Submit") %>
+<% end %>
+
+<% if @data.present? %>
+  <p>Received data: <%= @data %></p>
+<% end %>
+
+</div>
+
+<p><a href="https://twitter.com/digiconfucius">@DigitalConfucius</a></p>
