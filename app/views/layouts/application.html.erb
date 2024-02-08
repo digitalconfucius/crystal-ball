@@ -1,9 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VH8M00C4LZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-VH8M00C4LZ');
+    </script>
+
     <title>CrystalBall</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha384-Qt9Hug5NfnQ8N5GtZ3/3v1HjVz2TgkFwzOzjgRqV3pjkvP+ZZtU7FvyDZHfA1L8D" crossorigin="anonymous">
+
+    <style>
+
+        a {
+          color: #B22222;
+        } 
+
+        body {
+            background-color: #f8f9fa;
+            color: #495057;
+            min-height: 100vh; /* vh = viewport height */
+        }
+        .content-container {
+            padding-top: 100px;
+        }
+
+        .content-display {
+            font-family: 'Helvetica';
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+    </style>
 
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -14,6 +51,12 @@
   </head>
 
   <body>
-    <%= yield %>
+      <div class="container content-container">
+      <div class="row justify-content-center">
+      <div class="col-md-6 content-display">
+          <%= yield %>
+      </div>
+      </div>
+      </div>
   </body>
 </html>
