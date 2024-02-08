@@ -2,20 +2,35 @@
 
 <img src="./logo_medium.png"></img>
 
-<p>Ask me about something that you want to know.</p>
+<p>Ask me anything.</p>
 
 <div>
+<%= form_tag(objects_path, method: :post) do %>
 
-<%= form_tag(submit_form_path, method: :post) do %>
-    <%= label_tag(:data, "Enter some data:") %>
-    <%= text_field_tag(:data) %>
+    <%= label_tag(:key, "Key:") %>
+    <%= text_field_tag(:key) %>
+    </br></br>
+
+    <%= label_tag(:word, "Secret Word:") %>
+    <%= text_field_tag(:word) %>
+    </br></br>
+
+    <%= label_tag(:query, "Query:") %>
+    <%= text_field_tag(:query) %>
+    </br></br>
+
     <%= submit_tag("Submit") %>
-<% end %>
 
-<% if @data.present? %>
-  <p>Received data: <%= @data %></p>
 <% end %>
-
 </div>
 
+</br>
+<div class="row mb-3">
+<% if @query.present? %>
+  <p>Received query: <%= @query %></p>
+<% end %>
+</div>
+
+
+</br>
 <p><a href="https://twitter.com/digiconfucius">@DigitalConfucius</a></p>
