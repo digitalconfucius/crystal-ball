@@ -12,11 +12,11 @@
 <%= form_tag(objects_path, method: :post) do %>
 
     <%= label_tag(:key, "Key:") %>
-    <%= text_field_tag(:key) %>
+    <%= text_field_tag(:key, nil, class: "form-control") %>
     </br></br>
 
     <%= label_tag(:word, "Password:") %>
-    <%= text_field_tag(:word) %>
+    <%= text_field_tag(:word, nil, class: "form-control") %>
     </br></br>
 
     <%= label_tag(:query, "Query:") %> </br>
