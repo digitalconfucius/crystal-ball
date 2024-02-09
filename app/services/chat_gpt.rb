@@ -4,17 +4,17 @@ class ChatGpt
   
     def self.fetch_response(api_key, password, prompt)
 
-      if password != Rails.application.config.x.chat_gpt.password
-        return "Invalid password \"#{password}\". Request not sent."
-      end
-      
       if prompt == nil || prompt == " " || prompt == ""
         return "Invalid prompt \"#{prompt}\". Request not sent."
       end
 
+      if api_key.blank? && password != Rails.application.config.x.chat_gpt.password
+        return "Invalid password \"#{password}\". Request not sent."
+      end
+      
       localApiKey = api_key
       
-      if api_key == nil or api_key == ""
+      if api_key.blank? && password == Rails.application.config.x.chat_gpt.password 
         localApiKey = Rails.application.config.x.chat_gpt.api_key
       end
 
