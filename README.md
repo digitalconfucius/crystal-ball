@@ -12,3 +12,10 @@ ChatGPT Proxy
 
 `bin/rails db:create`
 
+# Render deploy
+
+See render.yaml and bin/render-deploy.sh
+
+# Screenshots
+
+![image](https://github.com/digitalconfucius/crystal-ball/assets/156959605/fe958f86-f154-44a7-9b4d-8c4e8d8ebc09)
