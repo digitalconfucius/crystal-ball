@@ -32,7 +32,7 @@ class ChatGpt
       response = HTTParty.post('https://api.openai.com/v1/chat/completions',
         body: options[:body],
         headers: options[:headers],
-        timeout: 30)
+        timeout: 69)
 
       puts "Full Response: #{JSON.parse(response.body)}"
 
