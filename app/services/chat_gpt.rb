@@ -29,8 +29,12 @@ class ChatGpt
         }.to_json
       }
   
-      response = post("/chat/completions", options)
-      #  return JSON.parse(response.body)
+      response = HTTParty.post('https://api.openai.com/v1/chat/completions',
+        body: options[:body],
+        headers: options[:headers],
+        timeout: 30)
+
+      puts "Full Response: #{JSON.parse(response.body)}"
 
       if response.code == 200
        return response['choices'][0]['message']['content']
