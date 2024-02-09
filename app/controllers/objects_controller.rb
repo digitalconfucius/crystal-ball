@@ -2,16 +2,14 @@ class ObjectsController < ApplicationController
   
   def index
 
-    if request.post?
+    @query = params[:query] if params[:query].present?
+    @key = params[:key] if params[:key].present?
+    @word = params[:word] if params[:word].present?
 
-      puts "request is post"
-
-      @key = params[:key]
-      @word = params[:word]
-      @query = params[:query]
-    end 
-
-    puts "puts: @query is: #{@query.inspect}"
+    respond_to do |format|
+      format.html
+      format.turbo_stream
+    end
 
   end
 
