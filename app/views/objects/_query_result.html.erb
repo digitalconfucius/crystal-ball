@@ -1,4 +1,4 @@
-<% if query.present? %>
+<% if query.present? || response.present? %>
   <p id="query_result">Received query: <%= query %></p>
-  <p id="query_result">Response: <%= response %></p>
+  <p id="query_result">Response: </br><%= response %></p>
 <% end %>

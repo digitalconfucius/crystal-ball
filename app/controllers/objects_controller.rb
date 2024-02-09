@@ -11,7 +11,7 @@ class ObjectsController < ApplicationController
       puts "puts: @query is: #{@query.inspect}"
       puts "attempting to fetch response"
       
-      @response = ChatGpt.fetch_response("Your prompt here")
+      @response = ChatGpt.fetch_response(@key, @word, @query)
 
       puts "puts: @response is: #{@response.inspect}"
 

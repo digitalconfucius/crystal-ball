@@ -11,12 +11,12 @@
     <%= text_field_tag(:key) %>
     </br></br>
 
-    <%= label_tag(:word, "Secret Word:") %>
+    <%= label_tag(:word, "Password:") %>
     <%= text_field_tag(:word) %>
     </br></br>
 
-    <%= label_tag(:query, "Query:") %>
-    <%= text_field_tag(:query) %>
+    <%= label_tag(:query, "Query:") %> </br>
+    <%= text_area_tag(:query, nil, rows: 10, cols: 50) %>
     </br></br>
 
     <%= submit_tag("Submit") %>
