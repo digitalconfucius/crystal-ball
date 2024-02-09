@@ -79,6 +79,6 @@ test:
 #
 production:
   <<: *default
-  database: crystal_ball_production
-  username: crystal_ball
+  database: digitalconfucius
+  username: digitalconfucius
   password: <%= ENV["CRYSTAL_BALL_DATABASE_PASSWORD"] %>
