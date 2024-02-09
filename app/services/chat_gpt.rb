@@ -8,14 +8,14 @@ class ChatGpt
         return "Invalid prompt \"#{prompt}\". Request not sent."
       end
 
-      if api_key.blank? && password != Rails.application.config.x.chat_gpt.password
+      if api_key.blank? && password != ENV['CHAT_GPT_PASSWORD']
         return "Invalid password \"#{password}\". Request not sent."
       end
       
       localApiKey = api_key
       
-      if api_key.blank? && password == Rails.application.config.x.chat_gpt.password 
-        localApiKey = Rails.application.config.x.chat_gpt.api_key
+      if api_key.blank? && password == ENV['CHAT_GPT_PASSWORD'] 
+        localApiKey = ENV['CHAT_GPT_API_KEY']
       end
 
       options = {
