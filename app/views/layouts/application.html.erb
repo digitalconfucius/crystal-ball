@@ -55,6 +55,17 @@
             padding: 1px 0;
         }
 
+      .query-container {
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto; /* Centers the box */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adds a subtle shadow */
+        background-color: #f9f9f9; /* Optional: Adds a background color */
+        word-wrap: break-word; /* Ensures the text fits within the box */
+      }
+
     </style>
 
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -66,14 +77,8 @@
   </head>
 
   <body>
-      <div class="container content-container">
-      <div class="row justify-content-center">
-      <div class="col-md-6 content-display">
-          <%= yield %>
-      </div>
-      </div>
-      </div>
 
+          <%= yield %>
 
       <footer class="my-footer">
   <div class="container">
